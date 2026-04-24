@@ -19,6 +19,8 @@ jobs:
       - run: npm test -- --passWithNoTests
   deploy:
     needs: test
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
 
