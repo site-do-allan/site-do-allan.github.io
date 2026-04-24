@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: "24"
           cache: "npm"
-      - run: npm ci
+      - run: npm install
       - run: npm test -- --passWithNoTests
   deploy:
     needs: test
@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: "24"
           cache: "npm"
-      - run: npm ci
+      - run: npm install
       - run: npm run build
       - uses: peaceiris/actions-gh-pages@v3
         with:
